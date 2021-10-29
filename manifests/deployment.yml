@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "akscluster-a048"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "akscluster-a048"
+  template:
+    metadata:
+      labels:
+        app: "akscluster-a048"
+    spec:
+      containers:
+        - name: "akscluster-a048"
+          image: "acrimages101.azurecr.io/akscluster"
+          ports:
+          - containerPort: 8082
